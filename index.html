@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mattia Chirichiello">
+    <title>Zalando.it</title>
+
+    <!-- Favicon Zalando -->
+    <link rel="icon" href="https://www.zalando.it/favicon.ico">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="bg-white">
+    <!-- Navbar -->
+    <nav>
+        <div class="navbar container mx-2">
+            <div class="ml-16">
+                <img src="img/logo-zalando.jpg" alt="logo zalando" width="130px">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="flex mx-auto container text-black">
+        <section class="flex-1 pt-20 rounded" id="container-zalando">
+            <div class="shadow-xl mt-2 p-8 mr-2">
+                <img src="img/zalando.jpg" alt="zalando">
+            </div>
+        </section>
+
+        <section class="flex-1 mx-auto shadow-xl p-24 rounded container">
+            <form>
+                <h2 class="text-2xl mb-2">Registrazione</h2>
+                <hr class="mb-3 text-gray-300">
+
+                <!-- Nome -->
+                <div>
+                    <label for="nome" class="block mb-2 text-sm font-medium text-gray-900 ">
+                        Nome
+                        <span id="errore-nome" class="pl-5 text-red-500">
+                            
+                        </span>
+                    </label>
+                    <input type="text"
+                        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500" id="nome-form">
+                </div>
+
+                <!-- Cognome -->
+                <div>
+                    <label for="cognome" class="block mb-2 text-sm font-medium text-gray-900">
+                        Cognome
+                        <span id="errore-cognome" class="pl-5 text-red-500">
+                        
+                        </span>
+                    </label>
+                    <input type="text"
+                        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500" id="cognome-form">
+                </div>
+
+                <!-- Telefono -->
+                <div>
+                    <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900">
+                        Telefono
+                        <span id="errore-telefono" class="pl-5 text-red-500">
+                        
+                        </span>
+                    </label>
+                    <input type="text"
+                        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs" id="telefono-form">
+                </div>
+
+                <!-- Città -->
+                <div>
+                    <label for="citta" class="block mb-2 text-sm font-medium text-gray-900">
+                        Città
+                        <span id="errore-citta" class="pl-5 text-red-500">
+                        
+                        </span>
+                    </label>
+                    <input type="text"
+                        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500" id="citta-form">
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">
+                        Email
+                        <span id="errore-email" class="pl-5 text-red-500">
+                
+                        </span>
+                    </label>
+                    <input type="text"
+                        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500"
+                        id="email-form">
+                </div>
+
+                <!-- Paesi -->
+                <div>
+                    <label for="paese" class="block mb-2 text-sm font-medium text-gray-900">
+                        Paese
+                    </label>
+                    <select id="paesi-form"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option selected>Italia</option>
+                        <option>Svizzera</option>
+                        <option>Inghilterra</option>
+                        <option>Germania</option>
+                        <option>USA</option>
+                        <option>Canada</option>
+                        <option>Giappone</option>
+                        <option>Spagna</option>
+                        <option disabled>Polonia (coming soon!)</option>
+                    </select>
+                </div>
+
+                <!-- Termini & Condizioni -->
+                <div class="flex items-center mb-4 mt-4">
+                    <input id="informativa-checkbox" type="checkbox" class="w-6 h-4 text-blue-600 bg-gray-100 rounded border-gray-300" checked>
+                    <label class=" ml-3 text-sm font-medium text-gray-900">Ho letto e accetto i
+                        <a 
+                            href="#" 
+                            id="informativa"
+                            class="text-blue-600 hover:underline">
+                            termini e condizioni
+
+                        </a>
+                    </label>
+                </div>
+
+                <!-- Registrati -->
+                <div>
+                    <button type="button"
+                        class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="inviaBtn">
+                        Registrati
+                    </button>
+                </div>
+                </div>
+        </section>
+
+        <!-- Avviso Cliente: Informativa sulla privacy -->
+        <div id="modal">
+            <div id="modal-div"
+                class="fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
+                <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow">
+                        <div class="flex justify-between items-start p-5 rounded-t border-b">
+                            <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl">
+                                Terms of Service
+                            </h3>
+                            <button type="button" onclick="chiudiModal()"
+                                class="close-modal text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-8 space-y-6">
+                            <p class="text-base leading-relaxed text-gray-500">
+                                With less than a month to go before the European Union enacts new consumer privacy laws
+                                for its citizens, companies around the world are updating their terms of service
+                                agreements to comply.
+                            </p>
+                            <p class="text-base leading-relaxed text-gray-500">
+                                The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on
+                                May 25 and is meant to ensure a common set of data rights in the European Union. It
+                                requires organizations to notify users as soon as possible of high-risk data breaches
+                                that could personally affect them.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Javascript -->
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
